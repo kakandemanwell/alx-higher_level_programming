@@ -6,12 +6,6 @@ class square:
     """defines a square object with dimensions size"""
     def __init__(self, size=0, position=(0, 0)):
         """initializes a class object with size set to 0"""
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be > 0")
-        if not isinstance(position, tuple) and len(position) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = position
 
@@ -24,6 +18,10 @@ class square:
     def size(self, value):
         """sets the value of size to value
         value: type(int)"""
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     @property
@@ -35,6 +33,8 @@ class square:
     def position(self, value):
         """sets the value of position to value
         vallue: type(tuple)"""
+        if not isinstance(position, tuple) and len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     def area(self):
