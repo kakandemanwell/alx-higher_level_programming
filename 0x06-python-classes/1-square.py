@@ -1,15 +1,11 @@
 #!/usr/bin/python3
 
-""" Defines a class Square! """
+""" defines a class Square"""
 
 
 class Square:
-
-    """ defines a square by;
-        a private instance: size
-        instantiation with size(no type/value verification) """
-
+    """defines a square with a size"""
     def __init__(self, size):
-        """ initializes the square class with a size parameter """
-
-        self._size = size
+        """initializes a new square object with size
+        size: type(int)"""
+        self.__size = size
