@@ -2,7 +2,7 @@
 """defines a locked class"""
 
 
-class Lockedclass:
+class LockedClass:
     """
     class prevents the user from dynamically creating
     new instance attributes, except if the new instance
