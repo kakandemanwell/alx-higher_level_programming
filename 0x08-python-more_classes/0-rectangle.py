@@ -2,6 +2,6 @@
 """ a class that defines a rectangle with no parameters or arguments"""
 
 
-class rectangle:
+class Rectangle:
     """ am empty class definition """
     pass
