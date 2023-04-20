@@ -38,7 +38,7 @@ class Rectangle:
     def height(self, value):
         """ sets the height to a passed argument value
         value: int"""
-        if isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError(" height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
