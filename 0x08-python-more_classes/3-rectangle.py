@@ -1,24 +1,24 @@
 #!/usr/bin/python3
 
-"""Defines a Rectangle class."""
+"""defines a class Rectangle"""
 
 
 class Rectangle:
-    """Represent a rectangle."""
+    """Represent a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
-
+        """
+        Initializes a new rectangle
         Args:
-            width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.
+            width (int): The width of the rectangke
+            height (int): The height of the rectangle
         """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get/set the width of the rectangle."""
+        """get/set the width of the rectangle"""
         return self.__width
 
     @width.setter
@@ -31,7 +31,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get/set the height of the rectangle."""
+        """get/set the height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -43,21 +43,24 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """returns the area of the rectangle object"""
+        """Return the area of the rectangle"""
         return (self.__height * self.__width)
 
     def perimeter(self):
-        """returns the perimeter of the rectangle object"""
-        if self.__height == 0 or self.__width == 0:
-            return 0
+        """Return the perimeter of the rectangle"""
+        if self.__width == 0 or self.height == 0:
+            return (0)
         else:
-            return (2(self.__height + self.__width))
+            return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """returns a visual representation of the rectangle
-        using the character #"""
-        if width == 0 or height == 0:
-            print("")
-        else:
-            for height in range(self.__height):
-                print('#'*self.__width)
+        """returns the rectangle representation with the character #"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        rect = []
+        for h in the range(self.__height):
+            [rect.append('#') for w in range(self.__width)]
+            if h != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
