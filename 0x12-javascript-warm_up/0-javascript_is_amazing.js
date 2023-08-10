@@ -1,8 +1,5 @@
 #!/usr/bin/node
 
-/*
-prints the variable myVar.
-*/
+let myVar = “JavaScript is amazing”
 
-const myVar = 'JavaScript is amazing';
 console.log(myVar);
