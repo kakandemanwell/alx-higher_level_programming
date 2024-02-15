@@ -8,7 +8,7 @@ def element_at(my_list, idx):
         idx (int): position of element to retrieve
     """
     if idx < 0:
-        return 0
+        return None
     if idx > len(my_list):
         return None
     else:
