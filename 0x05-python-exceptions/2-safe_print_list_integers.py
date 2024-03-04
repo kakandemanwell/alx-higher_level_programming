@@ -8,11 +8,12 @@ def safe_print_list_integer(my_list=[], x=0):
     x (int): number of elements to be printed
     return: number of elemts printed
     """
-    n = 0
-    for i in range(x):
+    count = 0
+    for i in range(0, x):
         try:
-            print("{:d}". format(my_list[i]))
-            n += 1
+            print("{:d}".format(my_list[i]), end="")
+            count += 1
         except (ValueError, TypeError):
-            continue
-    return(n)
+            pass
+        print('')
+        return (count)
