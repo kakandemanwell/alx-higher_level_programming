@@ -9,11 +9,15 @@ def safe_print_list_integer(my_list=[], x=0):
     return: number of elemts printed
     """
     count = 0
-    for i in range(0, x):
-        try:
-            print("{:d}".format(my_list[i]), end="")
-            count += 1
-        except (ValueError, TypeError):
-            pass
+    try:
+        for i in range(x):
+            try:
+                value = my_list[i]
+                if isinstance(value, int):
+                    print("{:d}".format(value, end="")
+                    count += 1
+            except (ValueError, IndexError, TypeError):
+                pass
+    finally:
         print('')
         return (count)
