@@ -14,9 +14,9 @@ def safe_print_list_integer(my_list=[], x=0):
             try:
                 value = my_list[i]
                 if isinstance(value, int):
-                    print("{:d}".format(value, end="")
+                    print("{:d}".format(value), end="")
                     count += 1
-            except (ValueError, IndexError, TypeError):
+            except (IndexError):
                 pass
     finally:
         print('')
