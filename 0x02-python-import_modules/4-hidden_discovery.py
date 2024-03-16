@@ -6,7 +6,5 @@ if __name__ == "__main__":
 
     names = dir(hidden_4)
     for nem in names:
-#        if isinstance(nem, str) and not nem.startswith('__'):
-#            print(nem)
         if nem[:2] != "__":
             print(nem)
