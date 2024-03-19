@@ -61,8 +61,8 @@ class Square:
         prints the square with the character '#' in stdout.
         If size is equal to 0, prints an empty line.
         """
-        if self.size != 0:
-            for h in range(1, self.__size):
-                print("#" * self.__size)
-        else:
+        if self.size == 0:
             print("")
+        else:
+            for h in range(self.__size):
+                print("#" * self.__size)
