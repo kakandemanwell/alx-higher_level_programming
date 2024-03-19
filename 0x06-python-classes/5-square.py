@@ -2,35 +2,67 @@
 """defines a class square"""
 
 
-class square:
-    """defines a square object with dimensions size"""
+class Square:
+    """A class to represent a square."""
+
     def __init__(self, size=0):
-        """initializes a class object with size set to 0"""
+        """
+        Initialize the Square with a size.
+
+        Parameters:
+        size (int): The size of the square. Default is 0.
+
+        Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is less than 0.
+        """
         self.__size = size
 
     @property
     def size(self):
-        """returns the size instance of the object"""
+        """
+        Get the size of the square.
+
+        Returns:
+        int: The size of the square.
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """sets the value of size to value
-        value: type(int)"""
+        """
+        Set the size of the square.
+
+        Parameters:
+        value (int): The size of the square.
+
+        Raises:
+        TypeError: If value is not an integer.
+        ValueError: If value is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
-        """returns the area of the square object"""
-        return (self.__size ** 2)
+        """
+        Calculate the area of the square.
+
+        Returns:
+        int: The area of the square.
+        """
+
+        return self.__size ** 2
 
     def my_print(self):
-        """prints the figure of the object graphicaly using the character #"""
-        if size == 0:
-            print("")
+        """
+        prints the square with the character '#' in stdout.
+        If size is equal to 0, prints an empty line.
+        """
+        if self.size != 0:
+            for h in range(1, self.__size):
+                print("#" * self.__size)
         else:
-            for height in range(self.__size):
-                print('#'*self.__size)
+            print("")
