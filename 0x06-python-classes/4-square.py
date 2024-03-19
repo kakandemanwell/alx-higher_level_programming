@@ -3,16 +3,7 @@
 
 
 class Square:
-    """
-    Initializes the Square with a sze.
 
-    Parameters:
-    size: (int): The size of the square. Default is 0.
-
-    Raises:
-    TypeError: if size is not an integer.
-    ValueError: if size is less than 0.
-    """
     def __init__(self, size):
         """
         Initializes the Square with a sze.
@@ -36,7 +27,7 @@ class Square:
         """sets the size to arg value"""
         if (type(value) is not int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif (value < 0):
             raise ValueError("size must be >= 0")
         self.__size = value
 
