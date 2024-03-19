@@ -2,12 +2,28 @@
 """ defines a class square"""
 
 
-class square:
-    """ defines a square of size size
-    size: type(int)"""
+class Square:
+    """
+    Initializes the Square with a sze.
+
+    Parameters:
+    size: (int): The size of the square. Default is 0.
+
+    Raises:
+    TypeError: if size is not an integer.
+    ValueError: if size is less than 0.
+    """
     def __init__(self, size):
-        """initializes a square object with size set to 0
-        size: type(int)"""
+        """
+        Initializes the Square with a sze.
+
+        Parameters:
+        size: (int): The size of the square. Default is 0.
+
+        Raises:
+        TypeError: if size is not an integer.
+        ValueError: if size is less than 0.
+        """
         self.__size = size
 
     @property
