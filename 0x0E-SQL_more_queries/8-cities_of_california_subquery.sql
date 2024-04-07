@@ -5,7 +5,7 @@
 -- You are not allowed to use the JOIN keyword
 -- The database name will be passed as an argument of the of the mysql command
 
-SELECT *
+SELECT id, name
 FROM cities
 WHERE state_id = (
 	SELECT id
