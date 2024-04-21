@@ -4,9 +4,17 @@
 How to use add_integer
 ============================================
 
+This module defines an addition function ``add_integer(a, b)``.
+Usage
+=================
+
+``add_integer(...)`` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+::
+
 >>> add_integer = __import__('0-add_integer').add_integer
 
-
+::
 # Addition of integers.
 
 >>> add_integer(1000000, 1527272880629)
@@ -14,25 +22,28 @@ How to use add_integer
 >>> add_integer(1, 3)
 4
 
+::
 # Addition with negative numbers
 >>> add_integer(1,-3)
 -2
 >>> add_integer(-3, -9)
 -12
 
-
+::
 # acombination of floats and integers
 >>> add_integer(3, 4.7)
 7
 
-# a floats
+::
+# with floats
 >>> add_integer(2.7788, 2.1781)
 4
 >>> add_integer(0.8, 0.7)
 0
 
+::
 # Error cases
-
+::
 # with string input
 
 >>> add_integer(1,'m')
@@ -42,6 +53,7 @@ Traceback (most recent call last):
     raise TypeError("b must be an integer")
 TypeError: b must be an integer
 
+::
 # with a dictionary input
 
 >>> add_integer(1,{'weight': 67, 'height': 185})
