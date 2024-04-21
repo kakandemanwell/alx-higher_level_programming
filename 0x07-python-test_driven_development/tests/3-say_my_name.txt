@@ -1,0 +1,49 @@
+# 3-say_my_name.txt
+
+=======================
+
+How to use 3-say_name.py
+===========================
+
+This modukle defines a function ``say_my_name(first_name, last_name="")``
+Usage
+================================
+
+``say_my_name(...)`` prints "My name is <first_name> <last_name>".
+::
+
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+::
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+>>> say_my_name("Volkanoski")
+My name is Volkanoski 
+
+>>> say_my_name(2, "White")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 17, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+
+>>> say_my_name("Walter", 4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 19, in say_my_name
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
+
+
+>>> say_my_name("Walter", None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 19, in say_my_name
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
+
