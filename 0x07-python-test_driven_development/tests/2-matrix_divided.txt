@@ -1,0 +1,87 @@
+# 2-matrix_divided.txt
+
+=====================================
+How to use 2-matrix_divided.py
+
+=====================================
+
+The module dfines a matrix division function ``matrix_divided(matrix, div)``.
+
+Usage
+
+=====
+
+``matrix_divided(...)`` returns a new matrix that is a copy of the parameter
+``matrix`` with all elements divided by ``div``.
+
+::
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+::
+>>> matrix_divided([[1, 2], [2, 4]], 2)
+[[0.5, 1.0], [1.0, 2.0]]
+
+>>> matrix_divided([[1.734, 2.76], [2.838, 4.09363]], 10)
+[[0.17, 0.28], [0.28, 0.41]]
+
+This shows how the function handles integers and float values.
+And how decimal values are kept to two decimal polaces.
+
+
+::
+When a none integer/float is passed as a divider, a NameError Or a TypeError is raised.
+>>> matrix_divided([[1.734, 2.76], [2.838, 4.09363]], two)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'two' is not defined
+
+:: like the divider, when a list of none integer/float elements
+is passed, a TypeError is raised.
+>>> matrix_divided([[1.734, 2.76], ['twenty four' , 4.09363]], 4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 23, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of "
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+When a matrix of unequal row/list sizes is passed,
+A TypeError is raised.
+>>> matrix_divided([[1.734, 2.76], ['twenty four' , 4.09363, 672]], 4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 23, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of "
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+>>> matrix_divided([[1.734, 2.76], [56 , 4.09363, 672]], 4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 27, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+
+::
+The function does not work with NaN values.
+>>> matrix_divided([[1.734, 2.76], [56 , 4.09363, 672]], NaN)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'NaN' is not defined
+
+::
+A ZeroDivisionError is raised when 0(zero) is passed as a divider.
+>>> matrix_divided([[1.734, 2.76], [56 , 4.09363, 672]], 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 27, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+
+::
+>>> matrix_divided([[1.734, 2.76], [56 , 4.09363]], 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 33, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
