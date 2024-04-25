@@ -1,11 +1,3 @@
 #!/usr/bin/node
-
-// prints the first argument passed to it
-
-const arg = process.argv;
-
-if (arg.length < 3) {
-  console.log('No argument');
-} else {
-  console.log(arg[2]);
-}
+const { argv } = require('process');
+if (argv[2] === undefined) { console.log('No argument'); } else { console.log(argv[2]); }
