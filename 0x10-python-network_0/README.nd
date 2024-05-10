@@ -1,0 +1,48 @@
+# 0x10. Python - Network #0
+
+## Overview
+This project focuses on HTTP (HyperText Transfer Protocol), URL structure, HTTP request and response, HTTP headers, and how to interact with HTTP services using Bash and cURL. The project also includes a Python task to find a peak in a list of unsorted integers.
+
+## Learning Objectives
+By the end of this project, you should be able to:
+- Understand the basics of HTTP and URL structure.
+- Define a URL, including its scheme, domain name, port, path, query string, and other components.
+- Describe HTTP request and response, including HTTP methods, status codes, headers, and cookies.
+- Use cURL to make HTTP requests, send data, retrieve responses, and work with HTTP headers.
+- Understand HTTP request and response bodies and what they represent.
+- Discuss what happens when you type a URL into a web browser and the subsequent network interactions.
+
+## Project Requirements
+- All Bash scripts must be exactly 3 lines long.
+- All files must end with a new line and be executable.
+- Use the `#!/bin/bash` shebang for Bash scripts.
+- Use the `#!/usr/bin/python3` shebang for Python scripts.
+- All your scripts should use silent mode for cURL with the `-s` option.
+- Code must be formatted according to pycodestyle for Python.
+- The output should be as specified in the examples.
+
+## Tasks
+### Task 0: cURL body size
+Write a Bash script to get the body size (in bytes) of a response from a given URL. You must use cURL. The script must display only the body size.
+
+### Task 1: cURL to the end
+Write a Bash script to send a GET request to a given URL and display the body of the response. The script should only display the body of a response with a 200 status code.
+
+### Task 2: cURL Method
+Write a Bash script to send a DELETE request to a given URL and display the body of the response.
+
+### Task 3: cURL only methods
+Write a Bash script to send a request to a given URL and retrieve a list of all HTTP methods the server will accept.
+
+### Task 4: cURL headers
+Write a Bash script to send a GET request to a given URL and display the body of the response. A header variable `X-School-User-Id` must be set with the value `98`.
+
+### Task 5: cURL POST parameters
+Write a Bash script to send a POST request to a given URL and display the body of the response. The POST request must include variables `email` and `subject` with specific values.
+
+### Task 6: Find a peak
+Write a Python function to find a peak in a list of unsorted integers. The function must have the lowest possible complexity, aiming for O(log(n)). The corresponding file `6-peak.txt` must contain the complexity description.
+
+
+
+
