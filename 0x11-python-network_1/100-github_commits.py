@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-import requests
-import sys
-
 """
 Takes 2 arguments in order to solve this challenge.
 
 The first argument will be the repository name
 The second argument will be the owner name
 """
-
+import requests
+import sys
 if __name__ == "__main__":
     repo = sys.argv[1]
     owner = sys.argv[2]
