@@ -3,7 +3,6 @@
 fetches https://alx-intranet.hbtn.io/status
 and displays the body of the response
 """
-import urllib
 import urllib.request
 
 url = "https://alx-intranet.hbtn.io/status"
