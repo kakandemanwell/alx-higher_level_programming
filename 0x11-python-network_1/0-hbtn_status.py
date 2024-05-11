@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-import urllib
-import urllib.request
-
 """
 fetches https://alx-intranet.hbtn.io/status
 and displays the body of the response
 """
+import urllib
+import urllib.request
 
 url = "https://alx-intranet.hbtn.io/status"
 
