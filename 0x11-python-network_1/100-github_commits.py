@@ -1,18 +1,22 @@
 #!/usr/bin/python3
-"""
-Takes 2 arguments in order to solve this challenge.
+"""Lists the 10 most recent commits on a given GitHub repository.
 
-The first argument will be the repository name
-The second argument will be the owner name
+Usage: ./100-github_commits.py <repository name> <repository owner>
 """
-import requests
 import sys
+import requests
+
+
 if __name__ == "__main__":
-    repo = sys.argv[1]
-    owner = sys.argv[2]
-    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
-    req = requests.get(url)
-    commits = req.json()
-    for i in range(10):
-        print("{}: {}".format(commits[i].get("sha"),
-                              commits[i].get("commit").get("author").get("name")))
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[2], sys.argv[1])
+
+    r = requests.get(url)
+    commits = r.json()
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
+    except IndexError:
+        pass
