@@ -4,13 +4,12 @@
 if __name__ == "__main__":
     """Prints the number of and the list of ts arguments"""
     import sys
-
-    length = len(sys.argv)
-
-    if length == 2:
-        print("{} Argument".format(length - 1))
+    length = len(sys.argv) - 1
+    if length == 0:
+        print("0 arguments.")
+    elif length == 1:
+        print("1 argument:")
     else:
-        print("{} Arguments".format(length - 1))
-
-    for i in range(1, length):
-        print("{}: {}".format(i, sys.argv[i]))
+        print("{} arguments:".format(length))
+        for i in range(length):
+            print("{}: {}".format(i + 1, sys.argv[i + 1]))
