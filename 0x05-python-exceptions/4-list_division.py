@@ -10,7 +10,8 @@ def list_division(my_list_1, my_list_2, list_length):
             else:
                 a = my_list_1[i]
                 b = my_list_2[i]
-                if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+                if not (isinstance(a, (int, float)) and
+                        isinstance(b, (int, float))):
                     print("wrong type")
                     result_list.append(0)
                 else:
@@ -21,5 +22,4 @@ def list_division(my_list_1, my_list_2, list_length):
         except Exception as e:
             print("unexpected error:", e)
             result_list.append(0)
-    
     return result_list
