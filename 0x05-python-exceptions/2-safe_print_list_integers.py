@@ -7,8 +7,18 @@ def safe_print_list_integers(my_list=[], x=0):
     x (int): number of elements to be printed
     return: number of elemts printed
     """
+    count = 0
+    printed = 0
     try:
         for i in range(x):
-            print("{:d}".format(my_list[i]), end="")
+            try:
+                print("{:d}".format(my_list[i]), end="")
+                count += 1
+            except (ValueError, TypeError):
+                continue
+            finally:
+                printed += 1
     except IndexError:
         raise IndexError("List index out of range")
+    print()
+    return count
