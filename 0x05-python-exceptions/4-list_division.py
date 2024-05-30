@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def list_division(my_list1, my_list2, list_length):
     """
     args:
@@ -15,7 +14,7 @@ def list_division(my_list1, my_list2, list_length):
         except TypeError:
             print("wrong type")
             div = 0
-        except ZeroValueError:
+        except ZeroDivisionError:
             print("division by zero")
             div = 0
         except IndexError:
