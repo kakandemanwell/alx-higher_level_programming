@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def safe_function(fct, *args):
     """runs the function fct and prints an exception message
     to the stdoutput"""
