@@ -1,29 +1,20 @@
 #!/usr/bin/python3
+"""Script lists all State objects from the database hbtn_0e_6_usa"""
 
-"""
-Adds a State object,
-with the same name as the passed argument from the database.
-"""
-
+import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State, Base
-import sys
+from model_state import Base, State
 
 if __name__ == "__main__":
-    """
-    connects to database, adds the passed state.
-    """
-
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(sys.argv[1], sys.argv[2], sys.argv[3]))
-
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    state_name = State(name=sys.argv[4])
-
-    session.add(state_name)
+    new_state = State(name="Louisiana")
+    session.add(new_state)
     session.commit()
 
-    print(state_name.id)
+    print(new_state.id)
     session.close()

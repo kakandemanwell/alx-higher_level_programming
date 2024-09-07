@@ -1,23 +1,16 @@
 #!/usr/bin/python3
-import MySQLdb
+"""This module contains a script that lists all states from hbtn_0e_0_usa"""
+
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
-
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-
-    session = MySQLdb.connect(host="localhost", port=3306, user=mysql_username, passwd=mysql_password, db=database_name, charset="utf8")
-
-    cursor = session.cursor()
-
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
-    results = cursor.fetchall()
-
-    for row in results:
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                           passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-
-    cursor.close()
-    session.close()
+    cur.close()
+    conn.close()

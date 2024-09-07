@@ -1,25 +1,20 @@
 #!/usr/bin/python3
+"""This module contains a script that displays the states table"""
 
-"""
-displays all values in the states table of hbtn_0e_0_usa
-where name matches the argument.
-"""
-
-import MySQLdb as db
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
-    session = db.connect(host="localhost", port=3306, user="root", passwd="MyZqe1", db="hbtn_0e_0_usa")
-    cursor = session.cursor()
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                           passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
+    cur = conn.cursor()
+    cur.execute(
+        "SELECT * FROM states WHERE Name LIKE BINARY '{}' ORDER BY id ASC"
+        .format(sys.argv[4]))
 
-    arg = sys.argv[1]
+    rows = cur.fetchall()
 
-    cursor.execute("SELECT * FROM states WHERE name = %s", (arg,))
-
-    results = cursor.fetchall()
-
-    for row in results:
+    for row in rows:
         print(row)
-
-    cursor.close()
-    session.close()
+    cur.close()
+    conn.close()

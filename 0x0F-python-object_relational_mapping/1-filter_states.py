@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-import MySQLdb as db
+"""This module contains a script that lists all states starting with N"""
+
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
-    session = db.connect(host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
-
-    cursor = session.cursor()
-
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
-    results = cursor.fetchall()
-
-    for row in results:
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                           passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
+    cur = conn.cursor()
+    cur.execute(
+        "SELECT * FROM states WHERE Name LIKE BINARY 'N%' ORDER BY id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-
-    cursor.close()
-    session.cilose()
+    cur.close()
+    conn.close()
